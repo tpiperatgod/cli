@@ -30,7 +30,7 @@ func NewCommand(in io.Reader, out, errout io.Writer) *cobra.Command {
 ofn controller the openfunction manager.
 
 Find more information at:
-    https://https://github.com/OpenFunction/OpenFunction/blob/main/README.md
+    https://github.com/OpenFunction/OpenFunction/blob/main/README.md
 `,
 		Run: func(cmd *cobra.Command, args []string) {
 			cmd.Help()
@@ -52,6 +52,7 @@ Find more information at:
 	cmd.AddCommand(subcommand.NewCmdCreate(kubeConfigFlags, ioStreams))
 	cmd.AddCommand(subcommand.NewCmdDelete(kubeConfigFlags, ioStreams))
 	cmd.AddCommand(subcommand.NewCmdGet(kubeConfigFlags, ioStreams))
+	cmd.AddCommand(subcommand.NewCmdLogs(kubeConfigFlags, ioStreams))
 	cmd.AddCommand(subcommand.NewCmdInstall(kubeConfigFlags, ioStreams))
 	cmd.AddCommand(subcommand.NewCmdUninstall(kubeConfigFlags, ioStreams))
 	cmd.AddCommand(subcommand.NewCmdDemo(kubeConfigFlags, ioStreams))
